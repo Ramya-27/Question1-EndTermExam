@@ -8,19 +8,18 @@ class Courses {
 		}
 }
 
-class ECE { //extend the parent class here 
+class ECE extends Courses { //extend the parent class here 
 	public String displayCourseDetails(String dept) {
-		// write or edit your code here 
 		String commonSubjects = "";//call the parent function after using inheritence
-		String subject1 = ""; //write the specific subjects name here
-		String subject2 = ""; //write the specific subjects name here
+		String subject1 = "Microprocessor"; //write the specific subjects name here
+		String subject2 = "Linear Integrated Circuits"; //write the specific subjects name here
 		
 		String specificSubjects = " specific subjects are:\n4. "+subject1+"\n5. "+subject2;
 		return commonSubjects+dept+specificSubjects;
 		
 	}
 }
-class Mechanical { //extend the parent class here 
+class Mechanical extends Courses{ //extend the parent class here 
 	public String displayCourseDetails(String dept) {
 		// write or edit your code here 
 		String commonSubjects = "";//call the parent function after using inheritence
@@ -33,13 +32,13 @@ class Mechanical { //extend the parent class here
 	}
 
 }
-class CSE  { //extend the parent class here 
+class CSE extends Courses  { //extend the parent class here 
 	public String displayCourseDetails(String dept) {
 		
 		// write or edit your code here 
-		String commonSubjects = "";//call the parent function after using inheritence
-		String subject1 = ""; //write the specific subjects name here
-		String subject2 = ""; //write the specific subjects name here
+		 String commonSubjects = "";//call the parent function after using inheritence
+		String subject1 = "Network Theory"; //write the specific subjects name here
+		String subject2 = "Operating Systems"; //write the specific subjects name here
 		
 		String specificSubjects = " specific subjects are:\n4. "+subject1+"\n5. "+subject2;
 		return commonSubjects+dept+specificSubjects;		
@@ -59,21 +58,35 @@ public class Question1 {
 		{
 			//this case is or ECE
 			//Initialize the Class using appropriately taking the concept of inheritence and polymorphism in mind.
-			System.out.println("");//call the function of the class that you initialized
+		    //super(displayCourseDetails("ECE"));
+			Courses e=new Courses();
+
+		   System.out.print(e.displayCourseDetails("ECE"));
+		   ECE e1 =new ECE();
+		   System.out.print(e1.displayCourseDetails("ECE"));
+			
 			break;
 		}
 		case 2:
 		{
 			//this case is or Mechanical
 			//Initialize the Class using appropriately taking the concept of inheritence and polymorphism in mind.
-			System.out.println("");//call the function of the class that you initialized
+		Courses  m=new Courses();
+			System.out.print(m.displayCourseDetails("Mechanical"));//call the function of the class that you initialized
+			Mechanical m1=new Mechanical();
+			System.out.print(m1.displayCourseDetails("Mechanical"));
 			break;
 		}
 		case 3:
 		{
 			//this case is or CSE
 			//Initialize the Class using appropriately taking the concept of inheritence and polymorphism in mind.
-			System.out.println("");//call the function of the class that you initialized
+			Courses c=new Courses();
+			
+			System.out.print(c.displayCourseDetails("CSE"));
+			//call the function of the class that you initialized
+			CSE c1=new CSE();
+			System.out.print(c1.displayCourseDetails("CSE"));
 			break;
 		}
 		default:
